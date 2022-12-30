@@ -7,6 +7,6 @@ import java.util.Optional;
 public interface DoctorServiceInterface {
     public List<Doctor> listDoctors();
     public Optional<Doctor> listId(int id);
-    public int saveDoctor(Doctor patient);
+    public int saveDoctor(Doctor doctor);
     public void deleteDoctor(int id);
 }

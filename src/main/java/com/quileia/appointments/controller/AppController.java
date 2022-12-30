@@ -61,4 +61,16 @@ public class AppController {
         model.addAttribute("doctorsList", doctorsList);
         return "doctors";
     }
+
+    @GetMapping("/newDoctor")
+    public String createDoctor(Model model) {
+        model.addAttribute("doctor", new Doctor());
+        return "doctorsForm";
+    }
+
+    @PostMapping("/saveDoctor")
+    public String saveDoctor(@Validated Doctor doctor, Model model) {
+        doctorService.saveDoctor(doctor);
+        return "redirect:/doctorsList";
+    }
 }
