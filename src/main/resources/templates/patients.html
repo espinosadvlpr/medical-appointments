@@ -30,11 +30,14 @@
             <td th:text="${patient.history}"></td>
             <td>
             <a th:href="@{/editPatient/}+${patient.id}" class="btn btn-warning">Editar</a>
-            <a class="btn btn-danger">Eliminar</a>
+            <a th:onclick="deleteRegister([[${patient.id}]])" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>
     </table>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="functions.js"></script>
 </body>
 </html>

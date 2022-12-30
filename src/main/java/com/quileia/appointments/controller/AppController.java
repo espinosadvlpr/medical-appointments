@@ -44,4 +44,10 @@ public class AppController {
         model.addAttribute("patient", patient);
         return "patientsForm";
     }
+
+    @GetMapping("/deletePatient/{id}")
+    public String deletePatient(@PathVariable int id, Model model) {
+        patientService.deletePatient(id);
+        return "redirect:/patientsList";
+    }
 }

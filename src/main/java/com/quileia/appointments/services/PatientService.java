@@ -36,6 +36,6 @@ public class PatientService implements PatientServiceInterface {
 
     @Override
     public void deletePatient(int id) {
-
+        patientInterface.deleteById(id);
     }
 }
