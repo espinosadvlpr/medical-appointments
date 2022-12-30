@@ -23,6 +23,11 @@ public class AppController {
     @Autowired
     private DoctorServiceInterface doctorService;
 
+    @GetMapping("/")
+    public String index(Model model) {
+        return "index";
+    }
+
     @GetMapping("/patientsList")
     public String listPatients(Model model) {
         List<Patient> patientsList = patientService.listPatients();
