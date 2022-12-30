@@ -24,8 +24,13 @@ public class AppController {
     private DoctorServiceInterface doctorService;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index() {
         return "index";
+    }
+
+    @GetMapping("/error")
+    public String error() {
+        return "error";
     }
 
     @GetMapping("/patientsList")
