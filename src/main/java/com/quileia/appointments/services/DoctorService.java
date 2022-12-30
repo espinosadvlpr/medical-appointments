@@ -36,6 +36,6 @@ public class DoctorService implements DoctorServiceInterface {
 
     @Override
     public void deleteDoctor(int id) {
-
+        doctorInterface.deleteById(id);
     }
 }

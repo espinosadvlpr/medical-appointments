@@ -30,7 +30,7 @@
             <td th:text="${patient.history}"></td>
             <td>
             <a th:href="@{/editPatient/}+${patient.id}" class="btn btn-warning">Editar</a>
-            <a th:onclick="deleteRegister([[${patient.id}]])" class="btn btn-danger">Eliminar</a>
+            <a th:onclick="deletePatient([[${patient.id}]])" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>
