@@ -1,7 +1,9 @@
 package com.quileia.appointments.controller;
 
+import com.quileia.appointments.interfaceService.AppointmentServiceInterface;
 import com.quileia.appointments.interfaceService.DoctorServiceInterface;
 import com.quileia.appointments.interfaceService.PatientServiceInterface;
+import com.quileia.appointments.models.Appointment;
 import com.quileia.appointments.models.Doctor;
 import com.quileia.appointments.models.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,8 @@ public class AppController {
     private PatientServiceInterface patientService;
     @Autowired
     private DoctorServiceInterface doctorService;
+    @Autowired
+    private AppointmentServiceInterface appointmentService;
 
     @GetMapping("/")
     public String index() {
@@ -95,5 +99,28 @@ public class AppController {
     public String deleteDoctor(@PathVariable int id, Model model) {
         doctorService.deleteDoctor(id);
         return "redirect:/patientsList";
+    }
+
+    @GetMapping("/appointmentsList")
+    public String listAppointments(Model model) {
+        List<Appointment> appointmentsList = appointmentService.listAppointments();
+        model.addAttribute("appointmentsList", appointmentsList);
+        return "appointments";
+    }
+
+    @GetMapping("/newAppointment")
+    public String createAppointments(Model model) {
+        List<Patient> patientsList = patientService.listPatients();
+        List<Doctor> doctorsList = doctorService.listDoctors();
+        model.addAttribute("appointment", new Appointment());
+        model.addAttribute("patientsList", patientsList);
+        model.addAttribute("doctorsList", doctorsList);
+        return "appointmentsForm";
+    }
+
+    @PostMapping("/saveAppointment")
+    public String saveAppointment(@Validated Appointment appointment, Model model) {
+        appointmentService.saveAppointment(appointment);
+        return "redirect:/appointmentsList";
     }
 }
