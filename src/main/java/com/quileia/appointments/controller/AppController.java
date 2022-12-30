@@ -1,6 +1,8 @@
 package com.quileia.appointments.controller;
 
+import com.quileia.appointments.interfaceService.DoctorServiceInterface;
 import com.quileia.appointments.interfaceService.PatientServiceInterface;
+import com.quileia.appointments.models.Doctor;
 import com.quileia.appointments.models.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,8 @@ import java.util.Optional;
 public class AppController {
     @Autowired
     private PatientServiceInterface patientService;
+    @Autowired
+    private DoctorServiceInterface doctorService;
 
     @GetMapping("/patientsList")
     public String listPatients(Model model) {
@@ -49,5 +53,12 @@ public class AppController {
     public String deletePatient(@PathVariable int id, Model model) {
         patientService.deletePatient(id);
         return "redirect:/patientsList";
+    }
+
+    @GetMapping("/doctorsList")
+    public String listDoctors(Model model) {
+        List<Doctor> doctorsList = doctorService.listDoctors();
+        model.addAttribute("doctorsList", doctorsList);
+        return "doctors";
     }
 }
