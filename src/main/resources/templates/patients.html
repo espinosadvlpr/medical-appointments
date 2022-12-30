@@ -29,7 +29,7 @@
             <td th:text="${patient.eps}"></td>
             <td th:text="${patient.history}"></td>
             <td>
-            <a class="btn btn-warning">Editar</a>
+            <a th:href="@{/editPatient/}+${patient.id}" class="btn btn-warning">Editar</a>
             <a class="btn btn-danger">Eliminar</a>
             </td>
         </tr>

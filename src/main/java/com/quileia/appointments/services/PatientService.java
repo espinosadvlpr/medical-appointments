@@ -21,7 +21,7 @@ public class PatientService implements PatientServiceInterface {
 
     @Override
     public Optional<Patient> listId(int id) {
-        return Optional.empty();
+        return patientInterface.findById(id);
     }
 
     @Override
