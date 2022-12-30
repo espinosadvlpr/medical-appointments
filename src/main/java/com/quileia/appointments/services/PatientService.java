@@ -26,7 +26,12 @@ public class PatientService implements PatientServiceInterface {
 
     @Override
     public int savePatient(Patient patient) {
-        return 0;
+        int response=0;
+        Patient patientSaved = patientInterface.save(patient);
+        if (!patientSaved.equals(null)){
+            response=1;
+        }
+        return response;
     }
 
     @Override

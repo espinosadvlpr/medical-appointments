@@ -1,5 +1,6 @@
 package com.quileia.appointments.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,11 +11,15 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String fullName;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date birthdate;
     private String identification;
     private String identificationType;
     private String eps;
     private String history;
+
+    public Patient() {
+    }
 
     public int getId() {
         return id;
