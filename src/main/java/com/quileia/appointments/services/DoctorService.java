@@ -21,7 +21,7 @@ public class DoctorService implements DoctorServiceInterface {
 
     @Override
     public Optional<Doctor> listId(int id) {
-        return Optional.empty();
+        return doctorInterface.findById(id);
     }
 
     @Override

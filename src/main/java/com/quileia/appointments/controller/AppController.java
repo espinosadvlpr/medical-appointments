@@ -73,4 +73,11 @@ public class AppController {
         doctorService.saveDoctor(doctor);
         return "redirect:/doctorsList";
     }
+
+    @GetMapping("/editDoctor/{id}")
+    public String editDoctor(@PathVariable int id, Model model) {
+        Optional<Doctor> doctor = doctorService.listId(id);
+        model.addAttribute("doctor", doctor);
+        return "doctorsForm";
+    }
 }
