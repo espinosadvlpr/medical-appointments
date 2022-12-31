@@ -7,13 +7,11 @@ Ademas, mediante un **Servicio Web** permite el consumo de la lista de medicos r
 Esta aplicación cuenta con un patron de diseño MVC para su estructura y un patron de especificación o de repostorio para 
 la logica del negocio.
 
----
 ## Librerias usadas
 Para el desarrollo del proyecto se creo una plantilla en la pagina **[Spring Initializr](https://start.spring.io/)** 
 seleccionando la versión de **2.7.7** de **Spring Boot**, la version **8** de **Java**  y la herramienta **Maven** para 
 la descarga y manejo las siguientes librerias: **Jpa, Thymeleaf, Spring Web, Data Rest** y **Mysql Connector**.
 
----
 ## Instalación del proyecto
 Clone el repositorio mediante **HTTPS** o **SSH** usando los siguientes comandos:
 
@@ -46,7 +44,6 @@ o dentro de la aplicación **Workbench** unicamente se deben ejecutar las siguie
 2 use quileia;
 ```
 
----
 ## Ejecución y uso el proyecto
 Una vez importado el proyecto, configurado el archivo **application.properties**, creada la base de datos dentro de **MySQL**
 y descargadas correctamente las dependencias de **Maven** se podrá ejecutar el proyecto.
@@ -61,7 +58,6 @@ editar y eliminar la información necesaria para el aplicativo.
 **NOTA: Una vez ejecutada la aplicación, las tablas de la base de datos se crean automaticamente y se podrá hacer uso del
 codigo SQL para la creación de datos de prueba dentro del archivo db_scripts.sql**
 
----
 ## Consumo del servicio web
 Para el consumo del servicio web se uso un repositorio de la libreria **Jpa**, el archivo se puede encontrar como 
 **repository/DoctorsRepository**. Dentro de este archivo se asigno la ruta para la URL del servicio web como **"doctors"** 
