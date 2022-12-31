@@ -62,7 +62,8 @@ codigo SQL para la creación de datos de prueba dentro del archivo db_scripts.sq
 Para el consumo del servicio web se uso un repositorio de la libreria **Jpa**, el archivo se puede encontrar como 
 **repository/DoctorsRepository**. Dentro de este archivo se asigno la ruta para la URL del servicio web como **"doctors"** 
 y en el archivo **application.properties** se asigno como extensión a la URL la base **"api"**, por lo cual para realizar 
-el consumo del servicio web del listado de medicos en el aplicativo se debe realizar una petición **GET** el siguiente URL: <localhost:8080/api/doctors>
+el consumo del servicio web del listado de medicos en el aplicativo se debe realizar una petición **GET** el siguiente URL: 
+<localhost:8080/api/doctors>
 
 **NOTA: Para el consumo de este servicio web se puede usar el navegador, pero se recomiendo el uso de aplicaciones para 
 peticiones HTTP. Para la prueba de este servicio se uso la aplicación [Postman](https://www.postman.com/downloads/) por lo cual se recomienda.**
