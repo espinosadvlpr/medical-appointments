@@ -8,26 +8,33 @@
 </head>
 <body>
 <div class="container mt-4">
-    <a th:href="@{/newAppointment}" class="btn btn-primary">Agendar cita</a>
-    <a th:href="@{/}" class="btn btn-danger">Volver</a>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Medico</th>
-            <th>Paciente</th>
-            <th>Dia</th>
-            <th>Hora</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="appointment:${appointmentsList}">
-            <td th:text="${appointment.doctor.fullName}"></td>
-            <td th:text="${appointment.patient.fullName}"></td>
-            <td th:text="${appointment.appointmentDay}"></td>
-            <td th:text="${appointment.appointmentHour}"></td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="text-center mb-4">
+        <h2>Citas medicas</h2>
+    </div>
+    <div class="text-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Medico</th>
+                <th>Paciente</th>
+                <th>Dia</th>
+                <th>Hora</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="appointment:${appointmentsList}">
+                <td th:text="${appointment.doctor.fullName}"></td>
+                <td th:text="${appointment.patient.fullName}"></td>
+                <td th:text="${appointment.appointmentDay}"></td>
+                <td th:text="${appointment.appointmentHour}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center mt-4">
+        <a th:href="@{/newAppointment}" class="btn btn-primary">Agendar cita</a>
+        <a th:href="@{/}" class="btn btn-danger">Volver al menú</a>
+    </div>
 </div>
 </body>
 </html>

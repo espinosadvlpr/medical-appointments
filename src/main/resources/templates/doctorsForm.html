@@ -44,11 +44,11 @@
           </div>
           <div class="from-group">
             <label>Hora inicio atención</label>
-            <input th:field="*{startHour}" type="time" class="form-control">
+            <input th:field="*{startHour}" type="time" step="3600" class="form-control">
           </div>
           <div class="from-group">
             <label>Hora fin atención</label>
-            <input th:field="*{endHour}" type="time" class="form-control">
+            <input th:field="*{endHour}" type="time" step="3600" class="form-control">
           </div>
         </div>
         <div class="card-footer text-center">
