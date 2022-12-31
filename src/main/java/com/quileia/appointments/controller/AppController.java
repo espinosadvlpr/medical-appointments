@@ -121,8 +121,8 @@ public class AppController {
     @PostMapping("/saveAppointment")
     public String saveAppointment(@Validated Appointment appointment, Model model) {
         String redirect = "redirect:/appointmentsList";
-        if (appointmentService.saveAppointment(appointment) == 0){
-            redirect = "/error";
+        if (appointmentService.saveAppointment(appointment) != 200){
+            redirect = "appointmentFail";
         }
         return redirect;
     }
